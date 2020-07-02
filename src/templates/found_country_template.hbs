@@ -1,0 +1,24 @@
+<div class="card">
+    <img src="{{flag}}" alt="Official Flag of {{capital}}" class="card-img-left" width="280px" />
+    <div class="card-body">
+        <h2>{{name}}</h2>
+        <p class="font-weight-bold">
+            Capital: <span class="font-weight-normal">{{capital}}</span>
+        </p>
+        <p class="font-weight-bold">
+            Population: <span class="font-weight-normal">{{population}}</span>
+        </p>
+        <div class="ul__style">
+            <p class="font-weight-bold">
+                Languages:
+            </p>
+            <ul class="list-group list-group-flush">
+                {{#each languages}}
+                <li class="list-group-item font-weight-normal">{{this.name}}</li>
+                {{!-- .then(data => data.forEach(language =>
+            language.languages.forEach(l => console.log(l.name)), ), --}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
