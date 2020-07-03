@@ -5,11 +5,11 @@ const result = document.querySelector('.result');
 
 const baseUrl = 'https://restcountries.eu/rest/v2/name/';
 
-export default async function fetchCountries(searchQuery) {
+export default function fetchCountries(searchQuery) {
   result.innerHTML = '';
-  const res = await fetch(`${baseUrl}${searchQuery}`)
+  return fetch(`${baseUrl}${searchQuery}`)
     .then(response => {
-      if (response.status < 400) {
+      if (response.ok) {
         return response.json();
       } else {
         result.innerHTML = resultErrorTemplate();
@@ -26,5 +26,4 @@ export default async function fetchCountries(searchQuery) {
         }
       }
     });
-  return res;
 }
